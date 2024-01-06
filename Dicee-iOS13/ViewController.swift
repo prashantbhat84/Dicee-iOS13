@@ -15,33 +15,30 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceImageViewTwo: UIImageView!
     var leftDiceNumber = 1;
     var rightDiceNumber = 5;
-    var imagesArray = [UIImage(imageLiteralResourceName: "DiceOne"),UIImage(imageLiteralResourceName: "DiceTwo"),UIImage(imageLiteralResourceName: "DiceThree"),UIImage(imageLiteralResourceName: "DiceFour"),UIImage(imageLiteralResourceName: "DiceFive"),UIImage(imageLiteralResourceName: "DiceSix")
+    let imagesArray = [UIImage(imageLiteralResourceName: "DiceOne"),UIImage(imageLiteralResourceName: "DiceTwo"),UIImage(imageLiteralResourceName: "DiceThree"),UIImage(imageLiteralResourceName: "DiceFour"),UIImage(imageLiteralResourceName: "DiceFive"),UIImage(imageLiteralResourceName: "DiceSix")
     ]
-    override func viewDidLoad() {
+    // commented viewDidLoad as its not required. equivalent to deletion of the code.
+   /* override func viewDidLoad() {
         super.viewDidLoad()
-//        static app initial tutorial
-        /* image literal for changing the image on the fly */
-//        diceImageViewOne.image = UIImage(imageLiteralResourceName:"DiceSix")
-//        diceImageViewTwo.image = UIImage(imageLiteralResourceName: "DiceTwo")
+        static app initial tutorial
+         image literal for changing the image on the fly 
+        diceImageViewOne.image = UIImage(imageLiteralResourceName:"DiceSix")
+        diceImageViewTwo.image = UIImage(imageLiteralResourceName: "DiceTwo")
         
-//        diceImageViewOne.alpha = 0.5
-//        diceImageViewTwo.alpha = 0.3
+        diceImageViewOne.alpha = 0.5
+        diceImageViewTwo.alpha = 0.3
         
-//        using arrays and variables
-        
-        
+        using arrays and variables
         
         
-    }
+        
+    }*/
     // the below event handler is generated similar to var generation. drag and drop
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-       
+        leftDiceNumber = Int.random(in: 0...5);
+        rightDiceNumber = Int.random(in: 0...5)
         diceImageViewOne.image = imagesArray[leftDiceNumber];
         diceImageViewTwo.image = imagesArray[rightDiceNumber];
-         leftDiceNumber = leftDiceNumber + 1;
-        rightDiceNumber = rightDiceNumber - 1;
-        
-        
     }
 }
 
