@@ -13,22 +13,35 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceImageViewOne: UIImageView!
     
     @IBOutlet weak var diceImageViewTwo: UIImageView!
+    var leftDiceNumber = 1;
+    var rightDiceNumber = 5;
+    var imagesArray = [UIImage(imageLiteralResourceName: "DiceOne"),UIImage(imageLiteralResourceName: "DiceTwo"),UIImage(imageLiteralResourceName: "DiceThree"),UIImage(imageLiteralResourceName: "DiceFour"),UIImage(imageLiteralResourceName: "DiceFive"),UIImage(imageLiteralResourceName: "DiceSix")
+    ]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        static app initial tutorial
         /* image literal for changing the image on the fly */
-        diceImageViewOne.image = UIImage(imageLiteralResourceName:"DiceSix")
-        diceImageViewTwo.image = UIImage(imageLiteralResourceName: "DiceTwo")
+//        diceImageViewOne.image = UIImage(imageLiteralResourceName:"DiceSix")
+//        diceImageViewTwo.image = UIImage(imageLiteralResourceName: "DiceTwo")
         
-        diceImageViewOne.alpha = 0.5
-        diceImageViewTwo.alpha = 0.3
+//        diceImageViewOne.alpha = 0.5
+//        diceImageViewTwo.alpha = 0.3
+        
+//        using arrays and variables
+        
+        
+        
+        
     }
     // the below event handler is generated similar to var generation. drag and drop
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        diceImageViewTwo.image = UIImage(imageLiteralResourceName: "DiceFour");
-        diceImageViewOne.image = UIImage(imageLiteralResourceName: "DiceFour");
-        diceImageViewTwo.alpha = 1
-        diceImageViewOne.alpha = 1
+       
+        diceImageViewOne.image = imagesArray[leftDiceNumber];
+        diceImageViewTwo.image = imagesArray[rightDiceNumber];
+         leftDiceNumber = leftDiceNumber + 1;
+        rightDiceNumber = rightDiceNumber - 1;
+        
+        
     }
 }
 
